@@ -1,15 +1,12 @@
-FROM node:latest
+FROM node:18-alpine
 
 WORKDIR /app
 
 COPY package*.json ./
 
 RUN npm install
-RUN npm install chokidar
 
 COPY . .
-
-ENV HOST=0.0.0.0
 
 EXPOSE 3000
 
